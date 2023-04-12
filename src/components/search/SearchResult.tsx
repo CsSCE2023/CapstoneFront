@@ -11,7 +11,7 @@ interface SearchResultProps {
 const SearchResult: React.FC<SearchResultProps> = ({ result }) => (
   <div className="p-4 w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
     <div className="bg-white shadow-md rounded p-6">
-      <h3 className="text-lg font-semibold mb-2">{result.title}</h3>
+      <h3 className="text-lg font-semibold mb-2 text-black">{result.name}</h3>
       <a
         href={result.link}
         className="text-blue-500 hover:text-blue-700 underline"

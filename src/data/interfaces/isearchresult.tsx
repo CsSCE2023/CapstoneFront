@@ -4,4 +4,6 @@ export interface SearchResult {
   title: string;
   link: string;
   description: string;
+  category: string;
+  name: string;
 }
