@@ -21,6 +21,7 @@ export default function Home() {
       data.products.data.items.map((p: SearchResult) => {
         return {
           ...p,
+          image: "https://picsum.photos/200/300",
           link: `/products/${p.id}`,
         };
       })
@@ -50,10 +51,12 @@ export default function Home() {
       fetchSearchResults();
       return;
     }
-    const products = searchResults.filter((s) => s.name.includes(search));
+    const products = searchResults.filter((s) =>
+      s.name.toLowerCase().includes(search.toLowerCase())
+    );
     setSearchResults(products);
     setFilteredResults(products);
-  }, [search]);
+  }, [search, searchResults]);
   const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setFilter(event.target.value);
   };

@@ -6,4 +6,5 @@ export interface SearchResult {
   description: string;
   category: string;
   name: string;
+  image: string;
 }
