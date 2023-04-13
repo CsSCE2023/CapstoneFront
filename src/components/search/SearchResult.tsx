@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { SearchResult } from "@/data/interfaces/isearchresult";
 interface SearchResultProps {
   result: {
     id: string;
@@ -12,9 +13,9 @@ interface SearchResultProps {
   };
 }
 
-const myLoader = ({ src, width, quality }) => {
-  return `https://example.com/${src}?w=${width}&q=${quality || 75}`;
-};
+// const myLoader = ({ src, width, quality }) => {
+//   return `https://example.com/${src}?w=${width}&q=${quality || 75}`;
+// };
 const SearchResult: React.FC<SearchResultProps> = ({ result }) => (
   <div className="p-4 w-full md:w-1/2 lg:w-1/3 xl:w-1/4 cursor-pointer">
     <div className="bg-white shadow-md rounded p-6 cursor-pointer hover:scale-110 hover:transition-transform">
@@ -38,11 +39,7 @@ const SearchResult: React.FC<SearchResultProps> = ({ result }) => (
 );
 
 interface SearchResultsProps {
-  results: Array<{
-    title: string;
-    link: string;
-    description: string;
-  }>;
+  results: Array<SearchResult>;
 }
 
 const SearchResults: React.FC<SearchResultsProps> = ({ results }) => (
