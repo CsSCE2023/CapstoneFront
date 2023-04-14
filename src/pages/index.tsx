@@ -4,6 +4,7 @@ import SearchInput from "@/components/inputs/searchinput";
 import SearchResults from "@/components/search/SearchResult";
 import React, { useEffect, useState } from "react";
 import { SearchResult } from "@/data/interfaces/isearchresult";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -65,7 +66,8 @@ export default function Home() {
     setSearch(e.target.value);
   };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between px-24">
+      <Header />
       <SearchInput onChange={onSearchInputChange} value={search} />
       {filteredResults.length > 0 && (
         <>
