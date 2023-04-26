@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import SearchInput from "@/components/inputs/searchinput";
-import SearchResults from "@/components/search/SearchResult";
+import SearchResults from "@/components/Product";
 import React, { useEffect, useState } from "react";
 import { SearchResult } from "@/data/interfaces/isearchresult";
 import Header from "@/components/Header";
+import PageLayout from "@/containers/layout/PageLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -66,9 +67,11 @@ export default function Home() {
     setSearch(e.target.value);
   };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between px-24">
+    <PageLayout>
       <Header />
+
       <SearchInput onChange={onSearchInputChange} value={search} />
+
       {filteredResults.length > 0 && (
         <>
           <div className="mb-6">
@@ -98,6 +101,6 @@ export default function Home() {
           <SearchResults results={filteredResults} />
         </>
       )}
-    </main>
+    </PageLayout>
   );
 }

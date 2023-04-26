@@ -1,4 +1,4 @@
-import SearchResults from "@/components/search/SearchResult";
+import SearchResults from "@/components/Product";
 import { SearchResult } from "@/data/interfaces/isearchresult";
 import React, { useState, useEffect } from "react";
 
