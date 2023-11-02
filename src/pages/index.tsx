@@ -22,7 +22,7 @@ export default function Home() {
     setSearchResults(
       data.products.data.items.map((p: SearchResult) => {
         return {
-          ...p,
+          p,
           image: "https://picsum.photos/200/300",
           link: `/products/${p.id}`,
         };
